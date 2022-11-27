@@ -34,8 +34,8 @@ class WeatherMapwindow(QDialog, QWidget, form_WeatherMapwindow):
             self.setupUi(self)                                          #setupUi 함수 실행
             self.home_button.clicked.connect(self.Home)                  #Home 버튼이 눌리면 Home 함수 실행
 
-
-            self.Busan.clicked.connect(self.buttonclicked_area)         #지역이름 눌리면 지역함수 실행
+            self.Seoul.clicked.connect(self.buttonclicked_area)          #지역이름 눌리면 지역함수 실행
+            self.Busan.clicked.connect(self.buttonclicked_area)         
             self.Incheon.clicked.connect(self.buttonclicked_area)
             self.Daegu.clicked.connect(self.buttonclicked_area)
             self.Gwangju.clicked.connect(self.buttonclicked_area)
