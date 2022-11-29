@@ -79,4 +79,4 @@ class MapWindow(QDialog, QWidget, form_mapwindow):
         try:
             self.close()                                        #즉시 그 창을종료
         except Exception as e:
-            print("button_back", e)
+            print("button_back", e) 
