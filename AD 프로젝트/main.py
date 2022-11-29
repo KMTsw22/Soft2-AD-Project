@@ -1,9 +1,9 @@
 import sys
 from PyQt5.QtWidgets import *
-from PyQt5 import uic #desingner로 만든 ui를 열기 위해 사용
-from WeatherMapwindow import WeatherMapwindow # 날씨
-from map import MapWindow #지도(네비게이션)
-form_main = uic.loadUiType("main.ui")[0] #메인 ui
+from PyQt5 import uic                           #desingner로 만든 ui를 열기 위해 사용
+from WeatherMapwindow import WeatherMapwindow   # 날씨
+from map import MapWindow                       #지도(네비게이션)
+form_main = uic.loadUiType("main.ui")[0]        #메인 ui
 
 class MyWindow(QMainWindow, QWidget, form_main):
 
@@ -24,19 +24,15 @@ class MyWindow(QMainWindow, QWidget, form_main):
 
     def buttonMap(self):
         try:
-            self.close()                        #Map 버튼이 눌렸을 떄 실행되는 함수로 앞에 main ui 닫음
-            self.Map_ = MapWindow()             #Map 윈도우를 실행하기위함
+            self.Map_ = MapWindow()             #buttonMap이 눌렸을 떄 Map 윈도우를 실행하기위함
             self.Map_.exec()                    #event loop 실행
-            self.show()                         #Map 에서 Back이 눌렸을떄 다시 main ui 를 실행하기 위함
         except Exception as e:
             print("buttonMap", e)
 
     def button_Weather(self):
         try:
-            self.close()                        #Weather button이 눌렸을 떄 실행되는 함수로 앞에 main ui 닫음
             self.weather = WeatherMapwindow()       #Weather 윈도우를 실행하기 위함
-            self.weather.exec()                 #event loop 실행
-            self.show()                         #Weather ui 에서 Back이 눌렸을때 main ui 를 실행하기 위함
+            self.weather.exec()                     #event loop 실행
         except Exception as e:
             print(e)
 
