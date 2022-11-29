@@ -17,10 +17,8 @@ class WeatherMapwindow(QDialog, QWidget, form_WeatherMapwindow):
             print("__init", e)
     def buttonclicked_area(self):                   #지역버튼이 눌렸을떄 실행 되는 함수
         try:
-            self.close()                            #지도 닫음
             self.weather = weatherwindow()          #날씨 정보 알려주기 위해 weatherwindow 호출
             self.weather.exec()                     #event loop 실행
-            self.show()                             #event loop 끝나면 다시 지도로 돌아오기 위함
         except Exception as e:
             print("area_button", e)
 
@@ -34,8 +32,8 @@ class WeatherMapwindow(QDialog, QWidget, form_WeatherMapwindow):
             self.setupUi(self)                                          #setupUi 함수 실행
             self.home_button.clicked.connect(self.Home)                  #Home 버튼이 눌리면 Home 함수 실행
 
-            self.Seoul.clicked.connect(self.buttonclicked_area)          #지역이름 눌리면 지역함수 실행
-            self.Busan.clicked.connect(self.buttonclicked_area)         
+            self.Seoul.clicked.connect(self.buttonclicked_area)
+            self.Busan.clicked.connect(self.buttonclicked_area)         #지역이름 눌리면 지역함수 실행
             self.Incheon.clicked.connect(self.buttonclicked_area)
             self.Daegu.clicked.connect(self.buttonclicked_area)
             self.Gwangju.clicked.connect(self.buttonclicked_area)
